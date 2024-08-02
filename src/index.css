@@ -1,16 +1,31 @@
+:root {
+  font-size: 16px;
+  font-family: "Open Sans";
+}
 body {
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb {
+  background: #44454a;
 }
 .main-body {
   height: 100vh;
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-template-rows: 70px 1fr;
+  grid-template-rows: 60px 1fr;
+  gap: 0;
   grid-template-areas:
     "side header"
     "side main";
 }
-
 .header {
   position: sticky;
   top: 0;
@@ -19,10 +34,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .header_sub_section:nth-child(1) {
   margin-left: 15px;
-  align-self: end;
   background-color: #1c1f23;
 }
 .header_sub_section:nth-child(2) {
@@ -35,15 +50,30 @@ body {
   justify-content: space-evenly;
   column-gap: 16px;
 }
-.logo {
-  width: 20px;
-  border-radius: 25%;
+.profile_setting .profile_setting_icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #44454a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile_setting .logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile_setting .logo img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .sidebar {
   position: fixed;
   top: 0;
-  left: -13px;
+  width: 60px;
   background-color: #1c1f23;
   grid-area: side;
   height: 100vh;
@@ -51,9 +81,8 @@ body {
 }
 .sidebar .logo {
   width: 30px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin: 0 auto;
+  height: 30px;
+  margin: 15px auto;
 }
 nav {
   display: flex;
@@ -62,6 +91,11 @@ nav {
   justify-content: flex-start;
   align-items: center;
   row-gap: 20px;
+}
+nav .sidebar__item:last-child {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
 }
 
 .main {

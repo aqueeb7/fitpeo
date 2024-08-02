@@ -2,13 +2,13 @@ import { IoSearchSharp } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import logo from "../assets/react.svg";
+import logo from "../assets/profile.jpg";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header_sub_section">
-        <div className="input-group mb-3">
+        <div className="input-group">
           <span className="input-group-text" id="basic-addon1">
             <IoSearchSharp />
           </span>
@@ -23,13 +23,13 @@ const Header = () => {
       <div className="header_sub_section">
         <div className="profile_setting">
           <div className="profile_setting_icon">
-            <MdOutlineMail size={26} color="#ccc" />
+            <MdOutlineMail size={24} color="#A5A6A9" />
           </div>
-          <div className="profile-setting_icon">
-            <IoSettingsOutline size={26} color="#ccc" />
+          <div className="profile_setting_icon">
+            <IoSettingsOutline size={24} color="#A5A6A9" />
           </div>
-          <div className="profile-setting_icon">
-            <IoMdNotificationsOutline size={26} color="#ccc" />
+          <div className="profile_setting_icon">
+            <IoMdNotificationsOutline size={24} color="#A5A6A9" />
           </div>
           <div className="profile-setting_icon">
             <div className="logo">

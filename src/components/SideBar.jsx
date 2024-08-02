@@ -4,6 +4,7 @@ import { MdInsertChartOutlined } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
 import { CiWallet } from "react-icons/ci";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { IoIosLogOut } from "react-icons/io";
 
 const icons = [
   FaHome,
@@ -11,6 +12,7 @@ const icons = [
   BiTask,
   CiWallet,
   IoBagCheckOutline,
+  IoIosLogOut,
 ];
 const SideBar = () => {
   return (
