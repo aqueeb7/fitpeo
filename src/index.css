@@ -1,0 +1,197 @@
+body {
+  overflow-x: hidden;
+}
+.main-body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "side header"
+    "side main";
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #1c1f23;
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header_sub_section:nth-child(1) {
+  margin-left: 15px;
+  align-self: end;
+  background-color: #1c1f23;
+}
+.header_sub_section:nth-child(2) {
+  align-self: center;
+  margin-right: 20px;
+}
+.profile_setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  column-gap: 16px;
+}
+.logo {
+  width: 20px;
+  border-radius: 25%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -13px;
+  background-color: #1c1f23;
+  grid-area: side;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar .logo {
+  width: 30px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+nav {
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.main {
+  height: calc(100% - 70px);
+  background-color: #141416;
+  grid-area: main;
+  display: grid;
+  padding: 20px;
+  /* overflow: scroll; */
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 2fr 3fr;
+
+  grid-template-areas:
+    "c1 c2"
+    "c3 c4"
+    "c5 c6";
+  gap: 20px;
+}
+
+.sub-section {
+  border-radius: 7px;
+}
+
+.sub-section:nth-child(1) {
+  grid-area: c1;
+}
+.sub-section:nth-child(2) {
+  grid-area: c2;
+  background-color: #22222a;
+}
+.sub-section:nth-child(3) {
+  grid-area: c3;
+  background-color: #22222a;
+}
+.sub-section:nth-child(4) {
+  grid-area: c4;
+  background-color: #22222a;
+}
+.sub-section:nth-child(5) {
+  grid-area: c5;
+  background-color: #22222a;
+}
+.sub-section:nth-child(6) {
+  grid-area: c6;
+  background-color: #22222a;
+}
+
+.net_profit {
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.net_profit .stats {
+  margin-left: 10px;
+}
+
+.net_profit .stats p {
+  color: #fff;
+}
+.net_profit .stats h2 {
+  color: #fff;
+  font-weight: 700;
+}
+
+.net_profit .stats span {
+  color: #6ee751;
+}
+.net_profit .progress_bar {
+  margin-right: 10px;
+}
+
+.sub-main-section {
+  display: flex;
+  flex-direction: row;
+  column-gap: 25px;
+}
+.sub-main-section .custom-card {
+  background-color: #1c1f23;
+  width: 250px;
+  height: 180px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sub-main-section .custom-card .card-logo .icon-bg {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  /* background-color: #6ee751; */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-main-section .custom-card .card-header span {
+  color: #fff;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.sub-main-section .custom-card .card-stats {
+  flex-grow: 1;
+  align-self: normal;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+.sub-main-section .custom-card .card-stats .sub-card-stats h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+@media (max-width: 925px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 200px);
+    grid-template-areas: initial;
+  }
+  .sub-section {
+    grid-area: initial !important;
+  }
+}
