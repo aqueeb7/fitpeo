@@ -8,7 +8,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header_sub_section">
-        <div className="input-group">
+        <div className="wrapper">
+          <div className="icon">
+            <IoSearchSharp color="#A5A6A9" size={22} />
+          </div>
+          <input className="input" placeholder="Search"></input>
+        </div>
+        {/* <div className="input-group">
           <span className="input-group-text" id="basic-addon1">
             <IoSearchSharp />
           </span>
@@ -18,7 +24,7 @@ const Header = () => {
             placeholder="Search"
             aria-label="Search"
           />
-        </div>
+        </div> */}
       </div>
       <div className="header_sub_section">
         <div className="profile_setting">
