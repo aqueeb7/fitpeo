@@ -1,7 +1,3 @@
-/* eslint-disable react/prop-types */
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { IoMdArrowDropup } from "react-icons/io";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { BsBagXFill } from "react-icons/bs";
 import { BsBagPlusFill } from "react-icons/bs";
