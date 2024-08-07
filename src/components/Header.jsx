@@ -3,10 +3,16 @@ import { MdOutlineMail } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import logo from "../assets/profile.jpg";
+import react from "../assets/react.svg";
 
 const Header = () => {
   return (
     <header className="header">
+      <div className="header_sub_section">
+        <div className="logo">
+          <img src={react} alt="logo" />
+        </div>
+      </div>
       <div className="header_sub_section">
         <div className="wrapper">
           <div className="icon">

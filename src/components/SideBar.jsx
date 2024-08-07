@@ -1,4 +1,3 @@
-import logo from "../assets/react.svg";
 import { FaHome } from "react-icons/fa";
 import { MdInsertChartOutlined } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
@@ -17,9 +16,9 @@ const icons = [
 const SideBar = () => {
   return (
     <section className="sidebar">
-      <div className="logo">
+      {/* <div className="logo">
         <img src={logo} alt="logo" />
-      </div>
+      </div> */}
       <nav>
         {icons.map((Icon, index) => (
           <div key={index} className="sidebar__item">

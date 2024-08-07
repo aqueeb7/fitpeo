@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IoMdArrowDropup } from "react-icons/io";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { BsBagXFill } from "react-icons/bs";
@@ -9,6 +10,7 @@ import Accordion from "./Accordian";
 import { AiOutlineAim } from "react-icons/ai";
 import { LiaHamburgerSolid } from "react-icons/lia";
 import { BiDish } from "react-icons/bi";
+
 import {
   BarChart,
   Bar,
@@ -16,8 +18,11 @@ import {
   YAxis,
   CartesianGrid,
   Rectangle,
+  ResponsiveContainer,
 } from "recharts";
 import StatsCard from "./StatsCard";
+import Table from "./Table";
+import StarRating from "./StartRating";
 
 const data = [
   { id: 1, day: 5, activity: 7000 },
@@ -107,6 +112,30 @@ const accordionData = [
   },
 ];
 
+const feedbackData = [
+  {
+    name: "Jenny Wilson",
+    img: "1.jpg",
+    rating: 4,
+    comment:
+      "The food was exellent and so was the service. I had the mushrrom risotto with scallops which was awesome. I had a burger over green(gluten-free) which was very good. They were very conscientious about gluten allergies.",
+  },
+  {
+    name: "Dianne Russell",
+    img: "2.jpg",
+    rating: 5,
+    comment:
+      "We enjoyed the Eggs Benedict served on homemade focaccia bread and hot coffee. Prefect service",
+  },
+  {
+    name: "Devon lane",
+    img: "3.jpg",
+    rating: 4,
+    comment:
+      "Normally wings are wings, but theirs are lean meaty and tender and juciy. Very good food enjoyed it.",
+  },
+];
+
 // Function to format y-axis tick labels
 const formatYAxis = (tickItem) => {
   if (tickItem >= 1000) {
@@ -153,22 +182,24 @@ const Main = () => {
             </select>
           </div>
         </div>
-        <BarChart width={1070} height={200} data={data}>
-          <CartesianGrid vertical={false} />
-          <XAxis dataKey="day" axisLine={false} tickLine={false} />
-          <YAxis
-            axisLine={false}
-            tickLine={false}
-            tickCount={7}
-            tickFormatter={formatYAxis}
-          />
-          <Bar
-            dataKey="activity"
-            fill="#7294FF"
-            barSize={20}
-            shape={<Rectangle radius={20} />}
-          />
-        </BarChart>
+        <ResponsiveContainer>
+          <BarChart width={1070} height={200} data={data}>
+            <CartesianGrid vertical={false} />
+            <XAxis dataKey="day" axisLine={false} tickLine={false} />
+            <YAxis
+              axisLine={false}
+              tickLine={false}
+              tickCount={7}
+              tickFormatter={formatYAxis}
+            />
+            <Bar
+              dataKey="activity"
+              fill="#7294FF"
+              barSize={20}
+              shape={<Rectangle radius={20} />}
+            />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
       <div className="sub-section">
         <div className="custom-accordion">
@@ -183,8 +214,34 @@ const Main = () => {
           ))}
         </div>
       </div>
-      <div className="sub-section"></div>
-      <div className="sub-section"></div>
+      <div className="sub-section">
+        <Table />
+      </div>
+      <div className="sub-section">
+        <div className="sub-main-section">
+          <h5>Customers Feedback</h5>
+          <div className="feedback-wrapper">
+            {feedbackData.map((feedback, index) => (
+              <div className="custom-feedback" key={index}>
+                <div className="feedback-header">
+                  <div className="feedback-header-wrapper">
+                    <img src={`src/assets/${feedback.img}`} alt="" />
+                    <h6>{feedback.name}</h6>
+                  </div>
+                </div>
+                <div className="feefback-rating-wrappper">
+                  <div className="rating-stars">
+                    <StarRating rating={feedback.rating} />
+                  </div>
+                </div>
+                <div className="feedback-comment">
+                  <p>{feedback.comment}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       <div className="sub-section">
         <h2>Dashboard</h2>
       </div>
